@@ -15,7 +15,7 @@ paginate: 5
 permalink: /:year/:month/:day/:title/
 
 # Social share and comments.
-disqus-id: 
+disqus-id: mitechblog
 twitter: techteammi
 github: marketinvoice
 
