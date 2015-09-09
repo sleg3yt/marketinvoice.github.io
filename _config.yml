@@ -1,0 +1,24 @@
+name: MarketInvoice Tech
+url: marketinvoice.github.io
+description: "The engineering, product and UX dream teams powering the UK's first and largest online platform for trading invoices."
+
+highlighter: pygments
+safe: true 
+lsi: false
+pygments: true
+markdown: redcarpet
+redcarpet: 
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+
+paginate: 5
+permalink: /:year/:month/:day/:title/
+
+# Social share and comments.
+disqus-id: 
+twitter: techteammi
+github: marketinvoice
+
+# RSS feed
+rss-feed-limit: 50
+rss-show-full: "yes"
