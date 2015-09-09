@@ -126,6 +126,10 @@ article p a {
     top: 0.75em;
 }
 
+.author {
+    font-weight: bold;
+}
+
 
 hr {
     border: 0;
