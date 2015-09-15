@@ -23,6 +23,10 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed">
 
+{% if page.canonical %}
+    <link rel="canonical" href="{{ page.canonical }}" />
+{% endif %}
+
 </head>
 
 <body>
