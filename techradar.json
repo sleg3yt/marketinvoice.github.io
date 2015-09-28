@@ -1,7 +1,22 @@
 ---
 permalink: /techradar.json
 ---
-[ {% for post in site.posts %} {% if post.techradar %}
+
+{% assign totalTechRadarItems = 0 %}
+{% for post in site.posts %}
+    {% if post.techradar %}
+        {% capture totalTechRadarItems %}{{ totalTechRadarItems | plus:1 }}{% endcapture %} 
+    {% endif %}
+{% endfor %}
+
+[
+
+{% assign itemNumber = 0 %}
+
+{% for post in site.posts %}
+{% if post.techradar %}
+    {% capture itemNumber %}{{ itemNumber | plus:1 }}{% endcapture %} 
+
     {
         "title": {{ post.title  | jsonify  }},
         "level": {{ post.techradar.level | jsonify }},
@@ -10,6 +25,10 @@ permalink: /techradar.json
         "url": "{{ site.url }}{{ post.url }}",
         "content": {{ post.content | jsonify }},
         "created": {{ post.date | date_to_xmlschema | jsonify }},
-        "createdBy": {{ post.author | jsonify }}
-    } {% endif %} {% endfor %}
+        "createdBy": {{ post.author | jsonify }},
+    }{% unless itemNumber >= totalTechRadarItems %},{% endunless %}
+{% endif %} 
+    
+
+{% endfor %}
 ]
