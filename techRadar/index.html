@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" class="fill">
+<head>
+	<title>MI- Tech Radar</title>
+
+	<!-- General META -->
+	<meta charset="utf-8">
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- Semantic META -->
+	<meta name="keywords" content="TechRadar Engineering">
+	<meta name="description" content="MI- Tech Radar">
+
+	<!-- Facebook META -->
+	<meta property="og:site_name" content="MI- Tech Radar">
+	<meta property="og:title" content="MI- Tech Radar">
+	<meta property="og:description" content="MI- Tech Radar">
+	<meta property="og:url" content="http://www.marketinvoice.com">
+	<meta property="og:image" content="/img/brand/logo.png">
+	<meta property="og:type" content="website">
+
+	<!-- Twitter META -->
+	<meta name="twitter:title" content="MI- Tech Radar">
+	<meta name="twitter:description" content="MI- Tech Radar">
+	<meta name="twitter:url" content="http://www.marketinvoice.com">
+	<meta name="twitter:image" content="/img/brand/logo.png">
+
+	<!-- Fav Icon -->
+	<link href="/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+	<!--Application CSS Files-->
+	<!-- {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %} -->
+
+
+	<link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.css">
+	<link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="css/core.css">
+
+
+	<!-- HTML5 Shim -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body class="ng-cloak fill">
+	<header data-ng-include="'js/modules/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+
+	<section class="content fill">
+		<section class="container fill">
+			<section data-ui-view class="fill"></section>
+		</section>
+	</section>
+
+	<!--Application JavaScript Files-->
+	<!-- {% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} -->
+
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.js"></script>
+
+	<script type="text/javascript" src="bower_components/bootstrap-css/js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+	<script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+	<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+
+	<script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="js/application.js"></script>
+	<script type="text/javascript" src="js/modules/core.client.module.js"></script>
+	<script type="text/javascript" src="js/modules/config/core.client.routes.js"></script>
+	<script type="text/javascript" src="js/modules/controllers/header.client.controller.js"></script>
+	<script type="text/javascript" src="js/modules/controllers/home.client.controller.js"></script>
+	<script type="text/javascript" src="js/modules/services/menus.client.service.js"></script>
+
+
+<!-- 	{% if process.env.NODE_ENV === 'development' %}
+	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
+	{% endif %} -->
+</body>
+
+</html>

@@ -9,6 +9,7 @@ permalink: /feed/
         <link>{{ site.url }}</link>
         <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
         {% for post in site.posts limit:site.rss-feed-limit %}
+        {% unless post.techradar %}
             <item>
                 <title>{{ post.title | xml_escape }}</title>
                 <dc:creator>{{ post.author.name | xml_escape }}</dc:creator>
@@ -21,6 +22,7 @@ permalink: /feed/
                 <link>{{ site.url }}{{ post.url }}</link>
                 <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
             </item>
+        {% endunless %}
         {% endfor %}
     </channel>
 </rss>
