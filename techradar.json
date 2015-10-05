@@ -25,7 +25,7 @@ permalink: /techradar.json
         "url": "{{ site.url }}{{ post.url }}",
         "content": {{ post.content | jsonify }},
         "created": {{ post.date | date_to_xmlschema | jsonify }},
-        "createdBy": {{ post.author | jsonify }},
+        "createdBy": {{ post.author | jsonify }}
     }{% unless itemNumber >= totalTechRadarItems %},{% endunless %}
 {% endif %} 
     
