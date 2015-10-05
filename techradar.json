@@ -23,7 +23,11 @@ permalink: /techradar.json
         "progress": {{ post.techradar.progress | jsonify }},
         "category": {{ post.techradar.category | jsonify }},
         "url": "{{ site.url }}{{ post.url }}",
-        "content": {{ post.content | jsonify }},
+        "summary":  {% if post.content contains '<!--break-->' %}
+                        {{ post.content | split:'<!--break-->' | first | jsonify }}
+                    {% else %}
+                        {{ post.content | truncatewords: 100 | jsonify}}
+                    {% endif %},
         "created": {{ post.date | date_to_xmlschema | jsonify }},
         "createdBy": {{ post.author | jsonify }}
     }{% unless itemNumber >= totalTechRadarItems %},{% endunless %}

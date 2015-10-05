@@ -12,9 +12,7 @@
 		<h3>
 			{{ selectedItem.title }}
 		</h3>
-		<p>
-			{{ selectedItem.summary }}
-		</p>
+		<p ng-bind-html="selectedItem.summary"></p>
 	</div>
 	<div class="fill radar">
 

@@ -166,7 +166,9 @@ function draw (isPaused, planets, scope) {
 		delta = (Date.now() - t0) - pauseDiff;
 
 		var rotation = function (d) {
-			return (d.phi0 + delta * ( 10000000 / (nowTicks - new Date(d.created).getTime())));
+			var date = new Date(d.created);
+			date.setDate(date.getDate()-30);
+			return (d.phi0 + delta * ( 10000000 / (nowTicks - date.getTime())));
 		};
 
 		svg.selectAll('.planet')
