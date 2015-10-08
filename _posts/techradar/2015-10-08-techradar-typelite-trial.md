@@ -7,7 +7,7 @@ categories:
 techradar:
   progress: 50
   category: tool
-  level: trail
+  level: trial
 tags:
   - Fintech
   - Data
