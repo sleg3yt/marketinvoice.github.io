@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="main-content">
+<div>
 
     <article class="module color-3">
         <h1>{{ page.title }}{{ .shortUrl }}</h1>
@@ -32,6 +32,12 @@ layout: default
             <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t={{ page.title }}&u={{ url }}">Facebook</a></li>
             <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ url }}&via={{ site.twitter }}&hashtags={{ tagStr }}">Twitter</a></li>
             <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url={{ url }}">Google+</a></li>
+
+            <nav class="module main-menu color-4">
+                <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t={{ page.title }}&u={{ url }}">Facebook</a>
+                <a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ url }}&via={{ site.twitter }}&hashtags={{ tagStr }}">Twitter</a>
+                <a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url={{ url }}">Google+</a>
+            </nav>
         </ul>
     </div>
 

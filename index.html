@@ -2,38 +2,33 @@
 layout: default
 ---
 
-<section class="main-content">
-
+<section>
     {% for post in paginator.posts %}
     {% unless post.techradar %}    
         <article class="module color-3">
-            <h2><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-            <span class="category">{{ post.categories | array_to_sentence_string }}</span>
-
+            <h2>
+                <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            </h2>
+            <div class="post-attributes">
+                <span>{{ post.author }}</span><span>{{ post.date | date: "%a, %d %b %Y" }}</span>
+            </div>
             {% if post.content contains '<!--break-->' %}
                 {{ post.content | split:'<!--break-->' | first }}
-                <a href="{{ post.url }}">read more</a>
+                <a class="read-more" href="{{ post.url }}">READ MORE</a>
             {% else %}
                  <p>{{ post.content | truncatewords: 100 }}</p>
             {% endif %}
-
-            <a href="{{ post.url }}" style="font-weight: bold">read more</a>
+            <a class="read-more" href="{{ post.url }}" style="font-weight: bold">READ MORE</a>
         </article>
     {% endunless %}
     {% endfor %}
-
     <div class="module pagination color-3">
         {% if paginator.previous_page %}
             <a href="{{ site.url }}{{ paginator.previous_page_path }}" class="previous">Previous</a>
         {% endif %}
-
         <span class="page_number">&mdash; {{ paginator.page }} of {{ paginator.total_pages }} &mdash;</span>
-
         {% if paginator.next_page %}
             <a href="{{ site.url }}{{ paginator.next_page_path }}" class="next">Next</a>
         {% endif %}
     </div>
-
 </section>
-
-

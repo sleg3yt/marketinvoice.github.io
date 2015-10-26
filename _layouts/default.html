@@ -30,46 +30,65 @@
 </head>
 
 <body>
-    <header id="top" class="main-header">
 
-        <div class="module title color-1">
-            <h1><a href="{{ site.url }}/">{{ site.name }}</a></h1>
+    <div class="main-container">
+
+        <header class="main-header color-1">
+            <a href="{{ site.url }}/" class="brand-logo">
+                <svg style="display: block;" width="30px" height="30px" viewBox="0 0 36 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                        <g id="Fill-1-+-Fill-2-+-Fill-3" sketch:type="MSLayerGroup">
+                            <path d="M22.2703784,24.0078416 L22.2703784,14.2581386 C22.2703784,11.9104158 21.2022973,10.704 19.2996486,10.704 C17.397,10.704 16.2289459,11.9104158 16.2289459,14.2581386 L16.2289459,24.0078416 L11.1551351,24.0078416 L11.1551351,14.2581386 C11.1551351,11.9104158 10.0870541,10.704 8.18440541,10.704 C6.28175676,10.704 5.11345946,11.9104158 5.11345946,14.2581386 L5.11345946,24.0078416 L0.0401351351,24.0078416 L0.0401351351,6.53013861 L5.11345946,6.53013861 L5.11345946,9.00831683 C6.28175676,7.5409901 7.81710811,6.20411881 10.3874595,6.20411881 C12.7240541,6.20411881 14.4929189,7.21473267 15.4277027,8.97576238 C16.9966216,7.18194059 18.8657027,6.20411881 21.3025135,6.20411881 C25.0742432,6.20411881 27.3439459,8.42138614 27.3439459,12.6280396 L27.3439459,24.0078416 L22.2703784,24.0078416" id="Fill-1" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+                            <path d="M30.3161351,4.44261386 L35.8798378,4.44261386 L35.8798378,-0.0639207921 L35.2999459,-0.0639207921 C34.4096757,2.02740594 33.5634324,3.09671287 30.3161351,3.78273267 L30.3161351,4.44261386" id="Fill-2" fill="#FF9843" sketch:type="MSShapeGroup"></path>
+                            <path d="M30.3161351,6.36736634 L35.8798378,6.36736634 L35.8798378,24.0078416 L30.3161351,24.0078416 L30.3161351,6.36736634 Z" id="Fill-3" fill="#FF9843" sketch:type="MSShapeGroup"></path>
+                        </g>
+                    </g>
+                </svg>
+            </a> 
+            <ul>
+                <li><a href="/techRadar" title="MarketInvoice tech radar" target="_blank">Tech Radar</a></li>
+                <li><a href="https://www.marketinvoice.com/team" title="Meet the team" target="_blank">Team</a></li>
+                <li><a href="https://www.marketinvoice.com/careers" title="Careers with MarketInvoice" target="_blank">Careers</a></li>
+            </ul>
+        </header>
+
+        <div class="main-content">
+            {{ content }}        
         </div>
 
-        <div class="module description color-2">
-            {{ site.description }}
+        <div class="main-navigation">
+            <div class="module description color-2">
+                <h2>{{ site.name }}</h2>
+                <p>{{ site.description }}</p>
+            </div>    
+
+            <nav class="module main-menu color-4">
+                <h4>Follow us</h4>
+                <a href="https://github.com/{{ site.github }}" title="Profile in Github" target="_blank">GitHub</a>
+                <a href="https://twitter.com/{{ site.twitter }}" title="Profile in Twitter" target="_blank">Twitter</a>
+                <a href="{{ site.url }}/feed" title="Suscribe to RSS" target="_blank">rss</a>
+            </nav>            
+
+            <div class="module recent-posts color-3">
+                <h4>Recent Posts</h4>
+                <nav>
+                    {% for post in site.posts limit:20 %}
+                        {% unless post.techradar %}  
+                        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">&#8227; {{ post.title }}</a>
+                        {% endunless %}
+                    {% endfor %}
+                </nav>
+            </div>
+
+            <div class="module recent-posts color-3">
+                <iframe src="http://jargonbuster.azurewebsites.net/embedded" width="280" height="300">
+                    <p>Your browser does not support iframes.</p>
+                </iframe>
+            </div>
         </div>
 
-        <nav class="module main-menu color-4">
-            <a href="https://github.com/{{ site.github }}" title="Profile in Github" target="_blank">GitHub</a>
-            <a href="https://twitter.com/{{ site.twitter }}" title="Profile in Twitter" target="_blank">Twitter</a>
-            <a href="{{ site.url }}/feed" title="Suscribe to RSS" target="_blank">rss</a>
-        </nav>
-
-<!--
-        <div class="module links color-3">
-            <a href="https://github.com/{{ site.github }}" title="Profile in Github" target="_blank">GitHub</a>
-            <a href="https://twitter.com/{{ site.twitter }}" title="Profile in Twitter" target="_blank">Twitter</a>
-            <a href="{{ site.url }}/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
-            <a href="https://soundcloud.com/{{ site.soundcloud }}" title="Profile in SoundCloud" target="_blank">SoundCloud</a>
-        </div>
--->
-        <div class="module recent-posts color-3">
-            <h4>Recent Posts</h4>
-            <nav>
-            {% for post in site.posts limit:20 %}
-                {% unless post.techradar %}  
-                <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">&#8227; {{ post.title }}</a>
-                {% endunless %}
-            {% endfor %}
-            </nav>
-        </div>
-
-    </header>
-
-    {{ content }}
-
-    {% include footer.html %}
-    {% include google-analytics.html %}
+        {% include footer.html %}
+        {% include google-analytics.html %}
+    </div>
 </body>
 </html>
