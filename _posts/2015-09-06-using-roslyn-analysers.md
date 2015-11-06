@@ -7,7 +7,7 @@ categories:
   - Engineering
 ---
 
-# What are the Roslyn analysers?
+## What are the Roslyn analysers?
 
 As you should already know Roslyn is the name of new C# 6.0 (and Visual Basic) compiler, written entirely in C# (and VB for the VB one). The old compiler was written in C++ and this is a complete re-implementation. You can find Roslyn's source code [on GitHub](https://github.com/dotnet/roslyn).
  
@@ -19,7 +19,7 @@ I am not going to drill into the details of how the analysers are implemented or
 
 You can get all source code from this post at: [https://github.com/ivanz/RoslynAnalysersUsageSample](https://github.com/ivanz/RoslynAnalysersUsageSample)
 
-# Using Roslyn analysers as Visual Studio Extensions
+## Using Roslyn analysers as Visual Studio Extensions
 
 The easiest way to get some extra analysers is to install the really good [VS Refactoring Essentials](http://vsrefactoringessentials.com/) analysers pack, which contains around [100 of them](http://vsrefactoringessentials.com/Features/All#collapseCSharpAnalyzers) (and lots of refactoring tools).
 
@@ -33,12 +33,12 @@ Once you have them installed you will start seeing some warnings, such as this o
 
 This is great, however it's not really useful unless everyone in the team has the extension installed, which on its own can be difficult to enforce or manage consistently.
 
-# Note on Solution Error Visualizer
+## Note on Solution Error Visualizer
 
 I am using the Solution Error Visualizer plug-in as part of the free
 [Productivity Power Tools for Visual Studio 2015 extension](https://visualstudiogallery.msdn.microsoft.com/34ebc6a2-2777-421d-8914-e29c1dfa7f5d) by Microsoft.  This is where the underlining in the Solution Explorer of errors and warnings comes from.
 
-# Using Roslyn analysers as NuGet packages in a project
+## Using Roslyn analysers as NuGet packages in a project
 
 This brings us to the second option of using Roslyn analysers, which is to install them as a NuGet package in all projects in the Visual Studio solution.
 
@@ -60,7 +60,7 @@ And if we look at the content of the `.csproj` file we will see this:
 
 The downside is that we have to ensure that every new project added to the solution has the analyser NuGet package added to it, but automating that is not that hard (e.g. using pre-commit hooks in Git).
 
-# Configuring Roslyn analyser rules for a single project
+## Configuring Roslyn analyser rules for a single project
 
 That's all great, but what if we don't want to remove `private` from our fields, because it doesn't conform to our code style? Or alternatively - we want it to be a hard error, so it conforms to our code style?
 
@@ -83,7 +83,7 @@ Once saved a new file will shop up in the project `RoslynAnalysersUsageSample.ru
 
 This is the same Rules Set file that we know from previous version of Visual Studio, which used to contain FxCop based rules. However an important note for those familiar with FxCop based Code Analysis rule sets is that all Roslyn analyser rules are enabled by default (in FxCop you had to add the rules explicitly).
 
-# Configuring Roslyn analyser rules for the whole solution
+## Configuring Roslyn analyser rules for the whole solution
 
 Let's add a new project to the solution with the Refactoring Essentials NuGet package installed and copy paste the class above into the new project. We will notice that our custom `Error` level for the `RECS0145` rule is not applied. And that's because our previous customization only applied for that single project we edited:
 
@@ -99,7 +99,7 @@ To remedy that we need to:
 
 That's it!
 
-# Suppressing warnings in special cases
+## Suppressing warnings in special cases
 
 In those rare cases when there is a warning, but there is a valid reason why we have done something the way we have done it the `System.Diagnostics.CodeAnalysis.SuppressMessage` attribute can be used (or evil evil #pragma).
 
@@ -116,7 +116,7 @@ void Start()
 }
 ```
 
-# Continuous Integration
+## Continuous Integration
 
 No extra work is required if the code analysers are added to the solution as NuGet packages and included under `Analysers`. 
 
@@ -125,7 +125,7 @@ There are two things to be aware of though:
 * You may see build errors if you don't do a `nuget restore .sln` on the build server before calling `msbuild`. It appears the VS build is trying to read analyser info before nuget is able to restore the packages.
 * Roslyn analyser warnings are standard compiler warnings so you can use the `TreatWarningsAsErrors` MsBuild property too.
 
-# Final words
+## Final words
 
 In this post we have covered:
 

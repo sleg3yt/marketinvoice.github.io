@@ -7,7 +7,7 @@ categories:
   - Engineering
 ---
 
-# In this series
+## In this series
 
 * FluentMigrator Part 1/3: Creating and running our first database migration (this post)
 * [FluentMigrator Part 2/3: Continuous Integration and Testing with database migrations](/2015/09/13/fluentmigrator-part-2/)
@@ -20,11 +20,11 @@ In this post we are going to cover:
 * How to create a database migration
 * How to run our database migration and then roll it back
 
-# What is FluentMigrator
+## What is FluentMigrator
 
 [FluentMigrator](https://github.com/schambers/fluentmigrator/) is a migration framework for .NET much like Ruby on Rails Migrations. Migrations are a structured way to alter your database schema and are an alternative to creating lots of sql scripts that have to be run manually by every developer involved. Migrations solve the problem of evolving a database schema for multiple databases (for example, the developer’s local database, the test database and the production database). Database schema changes are described in classes written in C# that can be checked into a version control system. [[source](https://github.com/schambers/fluentmigrator/blob/master/README.textile)]
 
-# Before we start
+## Before we start
 
 * You can download all the code from this post at: [https://github.com/ivanz/FluentMigratorSample](https://github.com/ivanz/FluentMigratorSample)
 * You will need either a SQL Server Express, SQL Server or an Azure SQL Database if you want to run the example.
@@ -48,7 +48,7 @@ And this is what it looks like when we run it:
 
 **Note:** Any Entity Framework automatic database initialization/migration has been disabled in the data context. 
 
-## Domain model and initial database schema
+### Domain model and initial database schema
 
 Our domain model:
 
@@ -112,7 +112,7 @@ public class Add_Make_Column_To_Car : Migration
 }
 ```
 
-## Anatomy of a database migration
+### Anatomy of a database migration
 
 Every migration has a version and the `MigrationAttribute` enables us to define the version of the database migration.
 
@@ -130,7 +130,7 @@ The fluent syntax of FluentMigrator supports pretty much everything you can thin
 * Executing embedded `.sql` files through `Execute.Script("filename")` / `Execute.EmbeddedScript("filename")`.
 
 
-# Running our first migration and rolling it back
+## Running our first migration and rolling it back
 
 There are many ways to run the database migration we just created:
 
@@ -201,7 +201,7 @@ Ask For Help:
 [+] Task completed.
 ```
 
-# Summary
+## Summary
 
 That's pretty much the high level overview and in the next post we are going to look at how do we utilize FluentMigrator in a Continuous Integration scenario. 
 
