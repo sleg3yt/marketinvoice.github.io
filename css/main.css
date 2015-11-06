@@ -31,8 +31,8 @@
 
 html, body {
     background: #FFF;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1em;
+    font-family: "Gotham A","Gotham B",sans-serif;
+    font-size: 16px;
     margin: 0;
 }
 
@@ -182,7 +182,6 @@ article {
 }
 
     .main-content .module {
-        font-size: 0.8em;
         margin-right: 1em;
     }
 
