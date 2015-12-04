@@ -7,7 +7,7 @@ categories:
 techradar:
   progress: 50
   category: devops
-  level: assess
+  level: trial
 tags:
   - Fintech
   - Data
