@@ -6,7 +6,7 @@ categories:
   - TechRadar
 techradar:
   progress: 50
-  category: library
+  category: tool
   level: assess
 tags:
   - Testing
