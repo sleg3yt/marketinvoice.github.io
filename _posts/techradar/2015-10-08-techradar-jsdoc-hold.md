@@ -7,7 +7,8 @@ categories:
 techradar:
   progress: 50
   category: tool
-  level: assess
+  level: hold
+  
 tags:
   - Fintech
   - Data
