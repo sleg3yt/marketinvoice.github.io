@@ -35,6 +35,10 @@ Reducing the number of items shipped per delivery reduces the risk. In our envir
 
 A focus on flow builds to a improvement in productivity. Identifying and removing obstacles minimises waste in the system, identifying quality problems early stops them being shipped to the customer, reducing the items shipped together leads to quicker defect resolution when things slip through the net. All this leads to a team that delivers value to the customer quickly and efficiently which build morale. Happy teams build focused on flow develop into highly productive teams: that can rapidly deliver the highest priority items to the customer and change focus rapidly.
 
-## So why focus on flow?
+## Actions to focus your flow?
 
-Why would you not!
+* Make releases smaller
+* Use WIP limits
+* Try to release more often
+* Don't work on more than one thing at a time
+* Stop and fix anything you find preventing you taking the above actions
