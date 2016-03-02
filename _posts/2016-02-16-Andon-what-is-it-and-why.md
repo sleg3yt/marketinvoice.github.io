@@ -5,9 +5,6 @@ layout: post
 categories:
   - Engineering
 ---
-
-
-# Andon - What is it and why?
  
 The Andon cord is a cord on a physical manufacturing line that you can pull to stop the entire line. If an item arrives at a station, a defect is found and it cannot be fixed before it leaves the station then the cord is pulled to stop the line. That is what it is why would you pull it? You pull it to stop the defect affecting the processes downstream, you pull it so the whole team can help resolve the problem, you pull it so you can identify the root cause and fix it, you pull it so you can build in quality to your product and process.
  

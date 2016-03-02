@@ -6,8 +6,6 @@ categories:
   - Engineering
 ---
 
-# Continous Process Flow
-
 ## What is it?
 
 Flow is the at the core of lean thinking. Minimising the time taken from inception of an idea to delivery will improve quality, lowercosts, and improve response times.
