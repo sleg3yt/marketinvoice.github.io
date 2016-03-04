@@ -19,17 +19,20 @@ General format is:
 In this post I am going look at the Generate ideas section of my personal favourite retrospective.  It is the "Stop, Start, Continue Retro". The name really says it all, what should we start doing? what should we stop doing? what do we do well that we should keep doing? It is very easy to generate actions from as you have things to stop and start, and it also helps people focus on things that are going well. Examples from previous retros include:
 
 Things you could start: 
+
 * rotating the facilitator
 * writing tests in the  Given, When, Then style
 * start writing more blog posts
 * being on time for stand-up
 	
 Things to continue:
+
 * improving monitoring
 * speeding up CI system
 * practicing TDD katas
 	
 Things to stop:
+
 * long stand-ups
 * releasing with failing tests
 * working on more than one ticket at once
